@@ -1,0 +1,74 @@
+"use client";
+import Button from "./Button";
+import Center from "./Center";
+import styled from "styled-components";
+
+const Bg = styled.div`
+    background-color: #222;
+    color: #FFF;
+    padding: 50px 0;
+`;
+const Title = styled.h1`
+    margin: 0;
+    font-weight:normal;
+    font-size:3rem;
+    padding: 10px 0;
+`;
+const Desc = styled.p`
+    color:#aaa;
+    font-size: .8rem;
+`;
+const ColumnWrapper = styled.div`
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 40px;
+    img{
+        max-width: 100%;
+    }
+    align-items: center;
+`;
+const Column = styled.div`
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+`;
+const ButtonsWrapper = styled.div`
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+`;
+
+export default function Featured() {
+    return(
+        <Bg>
+            <Center>
+                <ColumnWrapper>
+                    <Column>
+                        <div>
+                            <Title>KMUTNB</Title>
+                            <Desc>
+                                ยินดีต้อนรับเข้าสู่ ร้านสวัสดีการออนไลน์  KMUTNB เป็นเว็ปไซต์ที่นักศึกษาสามารถสั่งสินค้าเกี่ยวกับอุปกรณ์การเรียนและเครื่องแต่งกายต่างๆ
+                                ทำให้นักศึกษาสามารถสั่งซื้อสินค้าได้สะดวกและรวดเร็วยิ่งขึ้น
+                            </Desc>
+                            <ButtonsWrapper>
+                                <Button outline white size="m">Read more</Button>
+                                <Button primary size="l">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor">
+                                        <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+                                    </svg>
+                                    Add to cart
+                                </Button>
+                            </ButtonsWrapper>
+
+                        </div>
+                    </Column>
+                    <Column>
+                        <img src="https://dawid-next-ecommerce.s3.amazonaws.com/1679151719649.png" alt="Product img"/>
+                    </Column>
+                 </ColumnWrapper>
+            </Center>
+        </Bg>
+    )
+    
+}
