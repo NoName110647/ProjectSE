@@ -4,7 +4,7 @@ import Center from "./Center";
 import styled from "styled-components";
 
 const Bg = styled.div`
-    background-color: #222;
+    background-color:#d28375;
     color: #FFF;
     padding: 50px 0;
 `;
@@ -39,6 +39,7 @@ const ButtonsWrapper = styled.div`
     gap: 10px;
 `;
 
+
 export default function Featured() {
     return(
         <Bg>
@@ -47,17 +48,15 @@ export default function Featured() {
                     <Column>
                         <div>
                             <Title>KMUTNB</Title>
-                            <Desc>
+                            <Desc style={{ color: "#fff" }}>
                                 ยินดีต้อนรับเข้าสู่ ร้านสวัสดีการออนไลน์  KMUTNB เป็นเว็ปไซต์ที่นักศึกษาสามารถสั่งสินค้าเกี่ยวกับอุปกรณ์การเรียนและเครื่องแต่งกายต่างๆ
                                 ทำให้นักศึกษาสามารถสั่งซื้อสินค้าได้สะดวกและรวดเร็วยิ่งขึ้น
                             </Desc>
                             <ButtonsWrapper>
-                                <Button outline white size="m">Read more</Button>
-                                <Button primary size="l">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor">
-                                        <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
-                                    </svg>
-                                    Add to cart
+                                <Button outline white size="m"> More</Button>
+                                <Button primary size="l" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "4px" }}>
+                                    <img src="\list 2.png" alt="categories icon" width="24" height="24" style={{ display: "inline-block", verticalAlign: "middle" }} />
+                                    <span style={{ display: "inline-block", verticalAlign: "middle", marginLeft: "10px" }}>Shop by categories</span>
                                 </Button>
                             </ButtonsWrapper>
 

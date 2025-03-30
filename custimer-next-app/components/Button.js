@@ -1,58 +1,47 @@
-"use client"; 
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const StyledButton = styled.button`
-    border: 0;
-    padding: 10px 20px;
-    border-radius: 5px; 
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
+  border: 2px solid transparent; /* ขอบเริ่มต้น */
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
 
-    ${(props) => props.white && !props.outline && css`
-        background-color: #fff;
-        color: #000;    
-    `}
-    ${(props) => props.white && props.outline && css`
-        background-color: transparent;
-        color: #fff;  
-        border: 2px solid #fff; 
-    `}
-    ${(props) => props.primary && css`
-        background-color: rgb(235, 153, 77);
-        color: rgb(255, 255, 255);
-        border: 2px solid transparent;
-    `}
-
-    /* ปรับขนาดปุ่มตามขนาดที่กำหนด */
-    ${(props) => props.size === "s" && css`
-        font-size: 0.85rem;
-        padding: 8px 16px;
-    `}
-    ${(props) => props.size === "m" && css`
-        font-size: 1rem;
-        padding: 10px 20px;
-    `}
-    ${(props) => props.size === "l" && css`
-        font-size: 1.2rem;
-        padding: 12px 24px;
-    `}
-
-    svg {
-        height: 20px;
-        margin-right: 8px;
-    }
-
+  ${(props) =>
+    props.primary &&
+    `
+    background-color: #ac3520;
+    color: #fff;
     &:hover {
-        opacity: 0.85;
-        transform: scale(1.05);
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
+    &:active {
+      transform: scale(0.95);
+    }
+  `}
+
+  ${(props) =>
+    props.outline &&
+    `
+    background: white; /* เปลี่ยนเป็นสีขาว */
+    border: 2px solid black; /* ขอบดำ */
+    color: black; /* ตัวอักษรดำ */
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+  `}
 `;
 
-export default function Button({ children, size = "m", ...rest }) {
-    return <StyledButton size={size} {...rest}>{children}</StyledButton>;
+export default function Button({ children, primary, outline }) {
+  return (
+    <StyledButton primary={primary} outline={outline}>
+      {children}
+    </StyledButton>
+  );
 }
